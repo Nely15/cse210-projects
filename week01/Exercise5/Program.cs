@@ -14,10 +14,7 @@ class Program
         DisplayResult(name, squared);
     }
 
-    static void DisplayWelcome()
-    {
-        Console.WriteLine("Welcome to the Program!");
-    }
+    static void DisplayWelcome() => Console.WriteLine("Welcome to the Program!");
 
     static string UserName()
     {
@@ -42,9 +39,6 @@ class Program
         return square;
     }
 
-    static void DisplayResult(string name, int squaredNumber)
-    {
-        Console.WriteLine($"{name}, the square of your number is {squaredNumber}");
-    }
+    static void DisplayResult(string name, int squaredNumber) => Console.WriteLine($"{name}, the square of your number is {squaredNumber}");
 
 }

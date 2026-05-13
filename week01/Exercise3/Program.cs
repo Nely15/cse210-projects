@@ -8,7 +8,7 @@ class Program
 
         while (playAgain == "yes")
         {
-            Random randomGenerator = new Random();
+            Random randomGenerator = new();
             int magicNumber = randomGenerator.Next(1, 101);
 
 

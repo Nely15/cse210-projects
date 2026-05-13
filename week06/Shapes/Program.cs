@@ -2,8 +2,5 @@ using System;
 
 class Program
 {
-    static void Main(string[] args)
-    {
-        Console.WriteLine("Hello World! This is the Shapes Project.");
-    }
+    static void Main(string[] args) => Console.WriteLine("Hello World! This is the Shapes Project.");
 }
