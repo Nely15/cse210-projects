@@ -41,7 +41,7 @@ public class Video
         return _author;
     }
 
-    public int GetLength()
+    public int GetLengthSeconds()
 
     {
         return _lengthSeconds;

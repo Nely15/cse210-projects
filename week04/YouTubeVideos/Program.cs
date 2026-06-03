@@ -27,7 +27,7 @@ class Program
         videos.Add(video2);
 
 
-        Video video3 = new Video("Learning Russian for Beginners", "Language Hub", 780);
+        Video video3 = new Video("Learning Russian for Beginners", "Language Hub", 1800);
 
         video3.AddComment(new Comment("Eva", "This lesson was easy to follow."));
         video3.AddComment(new Comment("Marvin", "I learned a lot of new words."));
@@ -36,7 +36,7 @@ class Program
         videos.Add(video3);
 
 
-        Video video4 = new Video("10 Minute Home Workout", "Fit Life", 850);
+        Video video4 = new Video("10 Minute Home Workout", "Fit Life", 650);
 
         video4.AddComment(new Comment("Erin", "Perfect workout for busy days."));
         video4.AddComment(new Comment("Tyler", "I really felt the burn."));
@@ -50,7 +50,7 @@ class Program
             
             Console.WriteLine($"Title: {video.GetTitle()}");
             Console.WriteLine($"Author: {video.GetAuthor()}");
-            Console.WriteLine($"Length: {video.GetLength()} seconds");
+            Console.WriteLine($"Length: {video.GetLengthSeconds()} seconds");
             Console.WriteLine($"Number of Comments: {video.GetCommentCount()}");
 
             Console.WriteLine("Comments:");
