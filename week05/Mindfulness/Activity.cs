@@ -13,6 +13,7 @@ public class Activity
 
         Console.Clear();
         Console.WriteLine($"Welcome to the {_name}");
+        Console.WriteLine();
         Console.WriteLine(_description);
         Console.WriteLine();
 
