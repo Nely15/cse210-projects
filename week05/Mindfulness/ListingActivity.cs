@@ -16,7 +16,7 @@ public class ListingActivity : Activity
 
     };
 
-    private static List<string> _unusedPromts = new List<string>();
+    private static List<string> _unusedPrompts = new List<string>();
 
     private Random _random = new Random();
 
@@ -27,10 +27,10 @@ public class ListingActivity : Activity
         _description = "This activity helps you reflect on the good things in your life by having you list as many positive things that you can in a certain area.";
 
         //Fill prompt list when empty
-        if (_unusedPromts.Count == 0)
+        if (_unusedPrompts.Count == 0)
         {
 
-            _unusedPromts = new List<string>(_prompts);
+            _unusedPrompts = new List<string>(_prompts);
 
         }
 
@@ -40,21 +40,21 @@ public class ListingActivity : Activity
     private string GetRandomPrompt()
     {
 
-        int index = _random.Next(_unusedPromts.Count);
+        int index = _random.Next(_unusedPrompts.Count);
 
-        string prompt = _unusedPromts[index];
+        string prompts = _unusedPrompts[index];
 
-        _unusedPromts.RemoveAt(index);
+        _unusedPrompts.RemoveAt(index);
 
         //Refill after all prompts have been used
-        if (_unusedPromts.Count == 0)
+        if (_unusedPrompts.Count == 0)
         {
 
-            _unusedPromts = new List<string>(_prompts);
+            _unusedPrompts = new List<string>(_prompts);
 
         }
 
-        return prompt;
+        return prompts;
 
     }
 

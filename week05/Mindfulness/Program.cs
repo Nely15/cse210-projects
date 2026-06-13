@@ -90,5 +90,13 @@ class Program
         }
 
     }
-    
+
 }
+/*
+        Exceeding Requirements:
+        I added an activity log that tracks how many times each activity 
+        is completed and the total time spent on each activity. The statistics
+        are saved and loaded from a file so they persist between program sessions.
+        I also modified the Reflection and Listing activities so prompts are not 
+        repeated until all available prompts have been used.
+*/  

@@ -22,12 +22,12 @@ public class BreathingActivity : Activity
         {
 
             Console.WriteLine();
-            Console.Write("Breath in... ");
+            Console.Write("Breathe in... ");
             ShowCountdown(3);
             elapsed += 3;
 
             Console.WriteLine();
-            Console.Write("Breath out... ");
+            Console.Write("Breathe out... ");
             ShowCountdown(3);
             elapsed += 3;
 
