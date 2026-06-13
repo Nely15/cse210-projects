@@ -74,7 +74,7 @@ public class Activity
 
         }
 
-        Console.WriteLine("Done!");
+        Console.WriteLine();
 
     }
 
