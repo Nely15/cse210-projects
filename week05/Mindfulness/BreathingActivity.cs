@@ -23,15 +23,18 @@ public class BreathingActivity : Activity
 
             Console.WriteLine();
             Console.Write("Breath in... ");
-            ShowCountdown(4);
-            elapsed += 4;
+            ShowCountdown(3);
+            elapsed += 3;
 
             Console.WriteLine();
             Console.Write("Breath out... ");
-            ShowCountdown(4);
-            elapsed += 4;
+            ShowCountdown(3);
+            elapsed += 3;
 
         }
+
+        LogActivity.BreathingCount++;
+        LogActivity.BreathingSeconds += _duration;
 
         End();
 

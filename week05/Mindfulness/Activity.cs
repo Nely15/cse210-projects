@@ -16,7 +16,7 @@ public class Activity
         Console.WriteLine(_description);
         Console.WriteLine();
 
-        Console.WriteLine("How many seconds would you like to do this activity? ");
+        Console.WriteLine("How long in seconds, would you like for your session? ");
         _duration = int.Parse(Console.ReadLine());
 
         Console.WriteLine();
@@ -40,19 +40,25 @@ public class Activity
     protected void ShowSpinner(int seconds)
     {
 
-        string[] spinner = { "|", "/", "-", "\\" };
+        string[] spinner = {"|", "/", "-", "\\" };
         DateTime end = DateTime.Now.AddSeconds(seconds);
 
         int i = 0;
+
         while (DateTime.Now < end)
         {
 
             Console.Write(spinner[i % spinner.Length]);
             Thread.Sleep(200);
-            Console.Write("b");
+            Console.Write("\b");
             i++;
 
         }
+
+        Console.Write(" ");
+        Console.Write("\b");
+
+
 
     }
 
@@ -67,7 +73,9 @@ public class Activity
             Console.Write("\b \b");
 
         }
-        
+
+        Console.WriteLine("Done!");
+
     }
 
 }

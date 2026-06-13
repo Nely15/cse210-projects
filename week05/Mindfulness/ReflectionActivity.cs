@@ -16,6 +16,10 @@ public class ReflectionActivity : Activity
 
     };
 
+    private static List<string> _unusedPrompts = new List<string>();
+
+    private Random _random = new Random();
+
     private List<string> _questions = new List<string>
     {
 
@@ -32,33 +36,78 @@ public class ReflectionActivity : Activity
     {
 
         _name = "Reflection Activity";
-        _description = "This activity helps you reflect on menaningful experiences in your life.";
+        _description = "This activity will help you reflect on times  in your life when you have shown strength and resilience. Reflecting on these meaningful experiences in your life will help you recognize the power you have and how you can use it in other aspects of your life.";
+
+        if (_unusedPrompts.Count == 0)
+        {
+
+            _unusedPrompts = new List<string>(_prompt);
+        }
 
     }
+
+    private string GetRandomPrompt()
+    {
+
+        int index = _random.Next(_unusedPrompts.Count);
+
+        string chosen = _unusedPrompts[index];
+
+        _unusedPrompts.RemoveAt(index);
+        
+        if (_unusedPrompts.Count == 0)
+        {
+
+            _unusedPrompts = new List<string>(_prompt);
+
+        }
+
+        return chosen;
+
+    }
+
 
     public void Run()
     {
 
         Start();
 
-        Random rand = new Random();
-
         Console.WriteLine();
         Console.WriteLine("Consider the following prompt:");
-        Console.WriteLine(_prompt[rand.Next(_prompt.Count)]);
+        Console.WriteLine(GetRandomPrompt());
         ShowSpinner(3);
 
-        int elapsed = 0;
+        List<string> availableQuestions = new List<string>(_questions);
 
-        while (elapsed < _duration)
+        int questionCount = Math.Min(availableQuestions.Count, _duration / 6);
+
+        if (questionCount < 1)
         {
 
-            Console.WriteLine();
-            Console.WriteLine(_questions[rand.Next(_questions.Count)]);
-            ShowSpinner(4);
-            elapsed += 4;
+            questionCount = 1;
 
         }
+
+        int pauseTime = _duration / questionCount;
+
+        for (int i = 0; i < questionCount; i++)
+        {
+
+            int index = _random.Next(availableQuestions.Count);
+
+            string question = availableQuestions[index];
+
+            availableQuestions.RemoveAt(index);
+
+            Console.WriteLine();
+            Console.WriteLine(question);
+
+            ShowSpinner(pauseTime);
+
+        }
+
+        LogActivity.ReflectionCount++;
+        LogActivity.ReflectionSeconds += _duration;
 
         End();
 
