@@ -30,4 +30,21 @@ public abstract class Goal
     public abstract string GetStatusString();
     public abstract string GetStringRepresentation();
 
+    public virtual int ApplyPenalty()
+
+    {
+
+        return 0;
+
+    }
+
+
+    public virtual string GetDetailString()
+
+    {
+
+        return $"{GetStatusString()} {_name} ({_description})";
+
+    }
+
 }

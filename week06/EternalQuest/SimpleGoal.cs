@@ -3,6 +3,7 @@ public class SimpleGoal : Goal
 
     private bool _isComplete;
 
+    //Constructor used when creating new goals
     public SimpleGoal(string name, string description, int points)
     : base(name, description, points)
 
@@ -12,6 +13,16 @@ public class SimpleGoal : Goal
 
     }
 
+    //Constructor used when loading from file
+    public SimpleGoal(string name, string description, int points, bool isComplete)
+        : base(name, description, points)
+
+    {
+
+        _isComplete = isComplete;
+
+    }
+    
     public override int RecordEvent()
 
     {
@@ -27,7 +38,7 @@ public class SimpleGoal : Goal
 
     {
 
-        return _isComplete ? "[X]" : "[]";
+        return _isComplete ? "[X]" : "[ ]";
 
     }
 
@@ -35,8 +46,8 @@ public class SimpleGoal : Goal
 
     {
 
-        return $"SimpleGoal:{_name},{_description}, {_points},{_isComplete}";
+        return $"SimpleGoal:{_name},{_description},{_points},{_isComplete}";
 
     }
-    
+
 }

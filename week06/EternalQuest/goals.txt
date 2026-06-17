@@ -1,0 +1,5 @@
+125
+SimpleGoal:Read a book,read for 30 min,20,True
+EternalGoal:Temple marriage,honor your covenants,50
+ChecklistGoal:exercise,30 min daily,20,3,30,100,False,0,3,2026-06-17T15:59:07.2359305-05:00
+SimpleGoal:run,1mile,40,False
