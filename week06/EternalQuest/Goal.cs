@@ -34,7 +34,7 @@ public abstract class Goal
 
     {
 
-        return 0;
+        return 5;
 
     }
 

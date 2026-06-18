@@ -8,13 +8,15 @@ public class ChecklistGoal : Goal
     private int _bonus;
     private bool _isComplete;
 
+    //creativity feature
     private int _level;
     private int[] _milestones = { 30, 90, 180, 365 };
 
     private int _streak;
-    private int _penalty;
     private DateTime _lastCompleted;
     private int _frequencyDays;
+
+    private int _penalty;
 
     //For creating new goals
     public ChecklistGoal(string name, string description, int points, int target, int bonus)
@@ -28,10 +30,10 @@ public class ChecklistGoal : Goal
         _isComplete = false;
 
         _level = 0;
-        _penalty = 5;
         _lastCompleted = DateTime.MinValue;
         _streak = 0;
         _frequencyDays = 1;
+        _penalty = 5;
 
     }
 
@@ -51,8 +53,8 @@ public class ChecklistGoal : Goal
         _streak = streak;
         _lastCompleted = lastCompleted;
 
-        _penalty = 5;
         _frequencyDays = 1;
+        _penalty = 5;
 
     }
 
@@ -60,11 +62,12 @@ public class ChecklistGoal : Goal
 
     {
 
-        if (_isComplete) return 0;
+        if (_isComplete) 
+            return 0;
 
         int total = _points;
 
-        //penalty system
+        //Detects broken streak
         if (_lastCompleted != DateTime.MinValue)
 
         {
@@ -149,7 +152,7 @@ public class ChecklistGoal : Goal
 
     {
 
-        return $"{GetStatusString()} {_name} ({_description}) -- Level {_level + 1} | Progress {_completed}/{_target}";
+        return $"{GetStatusString()} {_name} ({_description}) -- Level {_level + 1} | Streak: {_streak} | Progress: {_completed}/{_target}";
 
     }
 
